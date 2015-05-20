@@ -12,3 +12,6 @@ RGB off = { 0, 0, 0 };
 RGB teal = { 60, 89, 78 };
 RGB yellow = { 34, 50, 69 };
 RGB orange = { 156, 55, 39 };
+RGB blue = { 0, 0, 255};
+RGB green = {34, 139, 34};
+RGB pink = {255,105,180};

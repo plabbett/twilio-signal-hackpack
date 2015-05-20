@@ -13,47 +13,62 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, PIN,
 
 void setup() {
   matrix.begin();
-  matrix.setBrightness(40);
+  matrix.setBrightness(20);
   matrix.setTextColor( matrix.Color(white.r, white.g, white.b) );
   matrix.setTextWrap(false);
   
 }
 
 void loop() {
-  crossFade(off, white, 50, 3);
-  delay(1000);
+  //crossFade(off, white, 50, 3);
+  //delay(1000);
 
-  colorWipe(purple, 15);
+  colorWipe(green, 15);
 
-  drawLogoRound();
-  delay(1200);
-
-  colorWipe(orange, 15);
-  delay(1200);
-
-  drawLogo();
+  drawI();
   delay(1200);
   
-  colorWipe(yellow, 15);
-  drawPhone();
+  colorWipe(white, 15);
+  
+  drawHeart();
   delay(1200);
+  
+  colorWipe(red, 15);
+  drawLogoRound();
+  delay(1200);
+  
+ colorWipe(blue, 15);
+  //delay(1200);
+  
+  drawTwitter();
+  delay(1200);
+  colorWipe(off, 15);
+  //colorWipe(orange, 15);
+  //delay(1200);
+
+  //drawLogo();
+  //delay(1200);
+  
+  //colorWipe(yellow, 15);
+  //drawPhone();
+  //delay(1200);
   
 //  colorWipe(purple, 15);
 //  drawSMS();
 //  delay(1200);
   
-  crossFade(purple, teal, 15, 5);
+  //crossFade(purple, teal, 15, 5);
 
   matrix.show();
 
-  String twitterHandle = "#signalconf";
+  String twitterHandle = "@ P A T R I C K L A B B E T T";
   scrollText(twitterHandle);
   scrollText(twitterHandle);
   delay(500);
 
-  crossFade(purple, white, 120, 5);
-  crossFade(white, off, 120, 5);
-  delay(2000);
+  //crossFade(purple, white, 120, 5);
+  //crossFade(white, off, 120, 5);
+  //delay(2000);
 }
 
 // Fill the dots one after the other with a color
@@ -159,6 +174,75 @@ void drawPhone(){
     for(int column = 0; column < 8; column++) {
      if(logo[row][column] == 1) {
        fadePixel(column, row, purple, white, 8, 0);
+     }
+   }
+  } 
+}
+
+void drawI(){
+  // This 8x8 array represents the LED matrix pixels. 
+  // A value of 1 means we’ll fade the pixel to white
+  int logo[8][8] = {  
+   {0, 1, 1, 1, 1, 1, 1, 0},
+   {0, 1, 1, 1, 1, 1, 1, 0},
+   {0, 0, 0, 1, 1, 0, 0, 0},
+   {0, 0, 0, 1, 1, 0, 0, 0},
+   {0, 0, 0, 1, 1, 0, 0, 0},
+   {0, 0, 0, 1, 1, 0, 0, 0},
+   {0, 1, 1, 1, 1, 1, 1, 0},
+   {0, 1, 1, 1, 1, 1, 1, 0}
+  };
+   
+  for(int row = 0; row < 8; row++) {
+    for(int column = 0; column < 8; column++) {
+     if(logo[row][column] == 1) {
+       fadePixel(column, row, purple, white, 8, 0);
+     }
+   }
+  } 
+}
+
+void drawTwitter(){
+  // This 8x8 array represents the LED matrix pixels. 
+  // A value of 1 means we’ll fade the pixel to white
+  int logo[8][8] = {  
+   {0, 0, 1, 1, 0, 0, 0, 0},
+   {0, 0, 1, 1, 0, 0, 0, 0},
+   {0, 0, 1, 1, 1, 1, 1, 0},
+   {0, 0, 1, 1, 1, 1, 1, 0},
+   {0, 0, 1, 1, 0, 0, 0, 0},
+   {0, 0, 1, 1, 0, 0, 0, 0},
+   {0, 0, 1, 1, 1, 1, 1, 0},
+   {0, 0, 0, 0, 1, 1, 1, 0},
+  };
+   
+  for(int row = 0; row < 8; row++) {
+    for(int column = 0; column < 8; column++) {
+     if(logo[row][column] == 1) {
+       fadePixel(column, row, purple, white, 8, 0);
+     }
+   }
+  } 
+}
+
+void drawHeart(){
+  // This 8x8 array represents the LED matrix pixels. 
+  // A value of 1 means we’ll fade the pixel to white
+  int logo[8][8] = {  
+   {0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 1, 1, 0, 0, 1, 1, 0},
+   {1, 1, 1, 1, 1, 1, 1, 1},
+   {1, 1, 1, 1, 1, 1, 1, 1},
+   {1, 1, 1, 1, 1, 1, 1, 1},
+   {0, 1, 1, 1, 1, 1, 1, 0},
+   {0, 0, 1, 1, 1, 1, 0, 0},
+   {0, 0, 0, 1, 1, 0, 0, 0}
+  };
+   
+  for(int row = 0; row < 8; row++) {
+    for(int column = 0; column < 8; column++) {
+     if(logo[row][column] == 1) {
+       fadePixel(column, row, off, pink, 8, 0);
      }
    }
   } 
